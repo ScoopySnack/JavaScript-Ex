@@ -37,6 +37,8 @@ console.log("" && 7)  // truthy && truthy -> last truthy value
 
 console.log("" && "Default")  // First truthy value ή το last falsy αν είναι όλα false
 
+const username = "" || "Default"
+
 let isBtnExists = true 
 let button = "Button"
 const buttonToShow = isBtnExists && button
