@@ -245,10 +245,45 @@ console.log(pick(obj,keys2)) //Επιστρέφει {age: 26}
 console.log(pick2(obj,keys2)) //Επιστρέφει {age: 26}
 
 //Ex2 Γράψτε μια συνάρτηση που παίρνει ως είσοδο ένα αντικείμενο και μια συνάρτηση mapping και επιστρέφει ένα νέο αντικείμενο όπου οι τιμές είναι το αποτέλεσμα της εφαρμογής της συνάρτησης mapping στις αρχικές τιμές 
-function fn(){
-    return 
+function mapValues(obj,fn){
+    return Object.fromEntries(Object.entries(obj).map(([key,value]) => [key,fn(value)]))
 }
 
-function mapValues(obj,fn){
+function fn (value){
+    return value * 2
+}
 
+const obj2 = {
+    a: 1,
+    b: 2,
+    c: 3
+}
+console.log(mapValues(obj2,fn)) //Επιστρέφει {a: 2, b: 4, c: 6}
+
+//Ex3 Γράψτε μια συνάρτηση που παίρνει ως είσοδο ένα αντικείμενο και μία callback συνάρτηση μετασχηματισμού και μετασχηματίζει το αντικείμενο για κάθε ζεύγος κλειδιού-τιμής (π.χ. μετατρέπει τα keys σε uppercase)
+function transformObj(obj,fn){
+    return Object.fromEntries(Object.entries(obj).map(([key,value]) => fn(key,value)))
+}
+
+function fn2(key,value){
+    return [key.toUpperCase(),value]
+}
+
+console.log(transformObj(obj2,fn2)) //Επιστρέφει {A: 1, B: 2, C: 3}
+
+//Γραψτε μια συνάρτηση που παίρνει ως είσοδο ένα αντικείμενο και μία συνάρτηση φιλτραρίσματος και επιστρέφει ένα νέο αντικείμενο που περιέχει μόνο τα ζεύγη κλειδιού-τιμής που πληρούν τη συνθήκη της φιλτραρίσματος
+
+function filterObj(obj,fn){
+    return Object.fromEntries(Object.entries(obj).filter(([key,value]) => fn(key,value)))
+}
+
+function fn3(key,value){
+    return key === "a" || value === 3
+}
+
+console.log(filterObj(obj2,fn3)) //Επιστρέφει {a: 1, c: 3}
+
+//Γραψτε μια συνάρτηση που παίρνει ως είσοδο ένα αντικείμενο και 2 callback συναρτησεις μετασχηματισμού και μετασχηματίζει το κάθε ζεύγος κλειδιού-τιμής του αντικειμένου με βάση τις συναρτήσεις μετασχηματισμού
+function transformObj2(obj,fn,fn2){
+    return Object.fromEntries(Object.entries(obj).map(([key, value]) => [fn(key), fn2(value)]))
 }
