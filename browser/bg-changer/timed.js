@@ -1,4 +1,4 @@
-let color
+let color = undefined
 
 window.addEventListener('DOMContentLoaded', function() {
     this.document.querySelector('#btn').addEventListener('click', function(){
@@ -40,4 +40,5 @@ function renderBg() {
     document.querySelector('#hex').innerHTML = color
     document.body.style.backgroundColor = color
 }
+
 
