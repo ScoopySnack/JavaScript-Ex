@@ -9,6 +9,6 @@ const person = {
 const {firstname, age, city} = person //object destructuring
 console.log(firstname, age, city) //Alice 25 Athens, They become variables that can be used in the code
 
-const {firstname: name, age: years, city: town} = person //object destructuring with alias
-console.log(name, years, town) //Alice 25 Athens
+const {firstname: first, age: years, city: town} = person //object destructuring with alias
+console.log(first, years, town) //Alice 25 Athens
 

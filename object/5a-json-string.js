@@ -3,6 +3,7 @@ const jsObj = {
     hobbies: [ {id:1, title: 'gym'}, {id:2, title: 'music'} ]
 }
 
+//Serialization
 const jsonString = JSON.stringify(jsObj) // convert object to json string
 console.log(jsonString)
 

@@ -18,4 +18,4 @@ const initial2 ={ name: "Alice", age: undefined, address: {street: "Patission", 
 console.log(JSON.parse(JSON.stringify(initial2))) // Here age is not copied because it is undefined
 
 // 4. Deep copy
-const copyInitial$ = structuredClone(initial) // structuredClone is a deep copy function
+const copyInitial4 = structuredClone(initial) // structuredClone is a deep copy function

@@ -1,4 +1,4 @@
-function max(...numbers){
+function max(...numbers){ //rest operator(...) χρησιμοποιείται για να πάρουμε όλα τα arguments που δεν έχουν οριστεί στην συνάρτηση
     let maxVal = -Infinity
 
     for (let n of numbers){
@@ -10,7 +10,7 @@ function max(...numbers){
 }
 
 console.log(max(1,2,3,4,5,6,7,8,9,10)) //10
-console.log(max(1, 6, 9, 3, 88)) 
+console.log(max(1, 6, 9, 3, 88))  //88
 
 function sum(...numbers) {
   return numbers.reduce((total, num) => total + num, 0)
@@ -27,4 +27,4 @@ function greet(message, ...names) {
   console.log(message + ", " + names.join(", "))
 }
 
-greet("Hello", "Alice", "Bob", "Costas")
+greet("Hello", "Alice", "Bob", "Costas") //Hello, Alice, Bob, Costas

@@ -1,7 +1,7 @@
 const store = `[
 {"id" : "pro4vog",
 "fields": {"company": "ikea",
- "colors"["#FF1234", "#222"],
+ "colors": ["#FF1234", "#222"],
  "featured": true,
  "price": 990,
  "genre": "white-black-chair"
@@ -9,12 +9,11 @@ const store = `[
 },
 {"id" : "pro4vog",
 "fields": {"company": "ikea",
- "colors"["#AB199", "#222"],
+ "colors": ["#AB199", "#222"],
  "featured": true,
  "price": 880,
  "genre": "black-black-chair"
  }
-}
-]`
+}]`
 
-console.log(JSON.parse(store)) 
+console.log(JSON.parse(store)) // Output: [ { id: 'pro4vog', fields: { company: 'ikea', colors: [Array], featured: true, price: 990, genre: 'white-black-chair' } }, { id: 'pro4vog', fields: { company: 'ikea', colors: [Array], featured: true, price: 880, genre: 'black-black-chair' } } ]
