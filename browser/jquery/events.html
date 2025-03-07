@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg-green {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+    <button type="button" id="btn">Click Me</button>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    $('#btn').on('click', () => {
+        $('body').toggleClass('bg-green') //toggle class is used to add and remove class from the element
+    })
+</script>
+</body>
+</html>
